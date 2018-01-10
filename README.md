@@ -1,4 +1,4 @@
-问题管理 BUG管理 任务管理 项目管理系统Cynthia
+﻿问题管理 BUG管理 任务管理 项目管理系统Cynthia
 =============================================
 		Cynthia提供了一个基于Web的、开源的、跨平台的软件项目管理和问题管理的解决方案。通过极大的灵活度，实现了特殊性和普遍性的统一。
 		它提供了强大的自定义配置功能，用户能够根据自己的实际情况配置问题的流转和数据模板，它同时内置了强大的Cache模块提高数据的访问效率。
@@ -15,6 +15,8 @@
 		8.	简洁漂亮的UI，采用Google风格的样式，看起来比较清爽
 		9.	开源的软件，用户团队可以方便的进行二次开发 
 		10.	强大的技术支持，我们有专业的团队维护和定期升级系统，您的反馈我们都会认真评估并在后面的版本中发布
+		11. 流程多人指派配置
+		12. 表单动作邮件灵活配置
 		…….
 
 如何开始
@@ -30,14 +32,27 @@
 		
 如何部署
 --------
+	Windows一键安装：
+		v2.0安装包下载地址：http://pan.baidu.com/s/1dD3Y0k5
+		
+	手动部署：
 		本单主要介绍如何部署cynthia服务(以tomcat为例)：
-		1. 线上下载cynthia.war包  或者地址：http://git.oschina.net/cynthia/Cynthia/blob/master/Cynthia.war
+		1. 线上下载cynthia.war包  或者地址：http://git.oschina.net/cynthia/Cynthia/blob/master/cynthia.war
 		2. 将下载的cynthia.war包  放在tomcat的webapps目录下面
 		3. 新建数据库命名为cynthia，导入docs目录下的cynthia.sql文件 , 请在新建数据库和导入sql文件是务必选择utf-8编码！
 		4. 启动tomcat应用,tomcat会自动解压Cynthia.war包 为Cynthia文件夹
 		5. 打开webapps/Cynthia/WEB-INF/classes目录下的config.properties 根据docs目录下的cynthia参数配置说明进行配置。（必须配置driverClassName、url、username、password参数!!）
 		6. 重启tomcat
 		7. 打开网址 localhost:8080/Cynthia/index.html 即可访问! 默认系统管理员帐号:admin 密码:admin
+
+如何升级
+--------
+	Windows版一键升级
+		一键升级包下载地址：http://pan.baidu.com/s/1i3pg1NZ
+	手动升级：
+		1.关闭tomcat服务
+		2.删除tomcat/webapps下Cynthia目录，下载最新的War包到webapps下
+		3.重启tomcat服务 修改config.properties
 		
 环境说明
 --------
@@ -52,9 +67,16 @@ Demo 地址
 		http://opencynthia.duapp.com
 		测试管理员账号 admin 密码：admin
 		测试普通用户 test1@test.com;test2@test.com 密码：123456
-文档下载
+文档下载地址
 --------
 http://git.oschina.net/cynthia/Cynthia/attach_files
+
+Maven部署的一些问题解决方法
+--------
+1. tools.jar依赖问题
+https://my.oschina.net/cloudcoder/blog/189560
+2. jre依赖的问题
+http://stackoverflow.com/questions/12585380/maven-unable-to-locate-the-javac-compiler-in
 
 交流、反馈和建议
 ---------------
